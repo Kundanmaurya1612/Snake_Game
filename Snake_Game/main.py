@@ -28,11 +28,12 @@ while game_is_on:
         snake.extend()
         
     
-    #detect collison with wall
+    #detect collision with wall
     if snake.tims[0].xcor() > 280 or snake.tims[0].xcor() < -280 or snake.tims[0].ycor() > 280 or snake.tims[0].ycor() < -280:
         score.game_over()
         game_is_on = False
     
+    #self collision detection
     for bite in snake.tims[1:]:
         if snake.tims[0].distance(bite) < 10:
             score.game_over()
